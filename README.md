@@ -1,5 +1,11 @@
 # [svgo](https://github.com/svg/svgo) loader for [webpack](https://github.com/webpack/webpack)
 
+## Install
+
+```
+npm install svgo-loader --save-dev
+```
+
 ## Usage
 
 [Documentation: Using loaders](http://webpack.github.io/docs/using-loaders.html)
