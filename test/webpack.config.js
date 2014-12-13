@@ -1,5 +1,3 @@
-var webpack = require('webpack');
-
 var svgoConfig = JSON.stringify({
   plugins: [
     {removeTitle: true},

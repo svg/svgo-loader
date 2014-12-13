@@ -17,7 +17,7 @@ There is two ways of loading svgo configuration.
 You can pass it as a JSON string after loader name, like this:
 
 ``` javascript
-var webpack = require('webpack');
+// webpack.config.js
 
 var svgoConfig = JSON.stringify({
   plugins: [
@@ -47,7 +47,7 @@ Or you can save svgo config in your main webpack config object,
 and then specify name of the property in the loader query string:
 
 ``` javascript
-var webpack = require('webpack');
+// webpack.config.js
 
 module.exports = {
   ...
