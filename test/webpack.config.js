@@ -1,14 +1,3 @@
-svgo-loader
-===========
-
-svgo loader for webpack
-
-
-# Configuration
-
-svgo-loader just passes config to the [svgo](https://github.com/svg/svgo) library.
-
-```js
 var webpack = require('webpack');
 
 var svgoConfig = JSON.stringify({
@@ -30,12 +19,8 @@ module.exports = {
     loaders: [
       {
         test: /.*\.svg$/,
-        loaders: [
-          'file-loader',
-          'svgo-loader?' + svgoConfig
-        ]
+        loaders: ['file-loader', '../index.js?' + svgoConfig]
       }
     ]
   }
 }
-```
