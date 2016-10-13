@@ -22,6 +22,11 @@ module.exports = function(source) {
 
   var svgo = new Svgo(config);
   svgo.optimize(source, function(result) {
+    if (result.error) {
+      callback(new Error(result.error));
+      return;
+    }
+
     callback(null, result.data);
   });
 };
