@@ -17,7 +17,7 @@ module.exports = {
     loaders: [
       {
         test: /.*\.svg$/,
-        loaders: ['file-loader', '../index.js?' + svgoConfig]
+        loaders: ['file-loader', '../../index.js?' + svgoConfig]
       }
     ]
   }
