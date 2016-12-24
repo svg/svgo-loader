@@ -5,7 +5,8 @@ module.exports = function(source) {
   this.cacheable(true);
   var callback = this.async();
 
-  var config = loaderUtils.parseQuery(this.query);
+  var interpolateQuery = loaderUtils.interpolateName(this, this.query, { content: source });
+  var config = loaderUtils.parseQuery(interpolateQuery);
 
   if (config.useConfig) {
     var configName = config.useConfig;
