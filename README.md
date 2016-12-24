@@ -71,3 +71,38 @@ module.exports = {
   }
 }
 ```
+
+### Interpolation
+
+Interpolation is allowed in the svgo configuration.  This is useful when using the [cleanupIDs](https://github.com/svg/svgo/blob/master/plugins/cleanupIDs.js) plugin, allowing a prefix to be added to id's to make them unique.
+
+See [loader-utils](https://github.com/webpack/loader-utils#interpolatename) for interpolation options.
+
+``` javascript
+// webpack.config.js
+
+var svgoConfig = JSON.stringify({
+  plugins: [
+    {
+        cleanupIDs: {
+            prefix: '[name]-'
+        }
+    }
+  ]
+});
+
+module.exports = {
+  ...
+  module: {
+    loaders: [
+      {
+        test: /.*\.svg$/,
+        loaders: [
+          'file-loader',
+          'svgo-loader?' + svgoConfig
+        ]
+      }
+    ]
+  }
+}
+```
