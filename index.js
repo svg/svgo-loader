@@ -7,6 +7,9 @@ module.exports = function(source) {
 
   var config = loaderUtils.parseQuery(this.query);
 
+  // This piece of code exists in order to support webpack 1.x.x top level configurations.
+  // In webpack 2 this options does not exists anymore.
+  // Please use the `options` field of the loader to pass your configuration
   if (config.useConfig) {
     var configName = config.useConfig;
     var config = this.options[configName];
