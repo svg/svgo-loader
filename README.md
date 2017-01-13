@@ -23,7 +23,7 @@ to the [svgo](https://github.com/svg/svgo) library.
       loader: 'file-loader'
     },
     {
-      loader: 'svgo-loader'
+      loader: 'svgo-loader',
       options: {
         plugins: [
           {removeTitle: true},
