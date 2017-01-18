@@ -5,7 +5,8 @@ module.exports = function(source) {
   this.cacheable(true);
   var callback = this.async();
 
-  var config = loaderUtils.parseQuery(this.query);
+  var interpolateQuery = loaderUtils.interpolateName(this, this.query, { content: source });
+  var config = loaderUtils.parseQuery(interpolateQuery);
 
   // This piece of code exists in order to support webpack 1.x.x top level configurations.
   // In webpack 2 this options does not exists anymore.
