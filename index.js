@@ -5,7 +5,7 @@ module.exports = function(source) {
   this.cacheable(true);
   var callback = this.async();
 
-  var config = loaderUtils.getOptions ? loaderUtils.getOptions(this) : loaderUtils.parseQuery(this.query);
+  var config = loaderUtils.getOptions(this);
 
   // This piece of code exists in order to support webpack 1.x.x top level configurations.
   // In webpack 2 this options does not exists anymore.
