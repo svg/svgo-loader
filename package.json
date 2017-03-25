@@ -24,10 +24,8 @@
     "file-loader": "^0.8.1",
     "webpack": "^1.4.13"
   },
-  "peerDependencies": {
-    "svgo": ">=0.4.0"
-  },
   "dependencies": {
-    "loader-utils": "^1.0.3"
+    "loader-utils": "^1.0.3",
+    "svgo": ">=0.4.0"
   }
 }
