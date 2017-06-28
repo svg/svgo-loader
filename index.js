@@ -24,12 +24,14 @@ module.exports = function(source) {
   }
 
   var svgo = new Svgo(config);
-  svgo.optimize(source, function(result) {
+  svgo.optimize(source)
+  .then(function(result) {
     if (result.error) {
       callback(new Error(result.error));
       return;
     }
 
     callback(null, result.data);
+    return;
   });
 };
