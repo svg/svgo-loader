@@ -25,7 +25,7 @@
     "webpack": "^1.4.13"
   },
   "peerDependencies": {
-    "svgo": ">=0.4.0"
+    "svgo": "^1.0.0"
   },
   "dependencies": {
     "loader-utils": "^1.0.3"
