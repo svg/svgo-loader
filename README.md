@@ -3,7 +3,13 @@
 ## Install
 
 ```
-$ npm install svgo-loader --save-dev
+$ npm install svgo svgo-loader --save-dev
+```
+
+... with Yarn
+
+```
+$ yarn add svgo svgo-loader -D
 ```
 
 ## Usage
