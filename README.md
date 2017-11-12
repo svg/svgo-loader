@@ -6,7 +6,7 @@
 $ npm install svgo svgo-loader --save-dev
 ```
 
-... with Yarn
+... or with Yarn
 
 ```
 $ yarn add svgo svgo-loader -D
