@@ -12,6 +12,8 @@ $ npm install svgo svgo-loader --save-dev
 $ yarn add svgo svgo-loader -D
 ```
 
+DON'T FORGET TO INSTALL / UPDATE THE `svgo` PACKAGE after you update `svg-loader` (see [#20](https://github.com/rpominov/svgo-loader/issues/20))
+
 ## Usage
 
 [Documentation: Using loaders](http://webpack.github.io/docs/using-loaders.html)
