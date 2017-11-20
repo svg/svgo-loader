@@ -24,7 +24,7 @@ module.exports = function(source) {
   }
 
   var svgo = new Svgo(config);
-  svgo.optimize(source, { input: 'file', path: this.resourcePath })
+  svgo.optimize(source, { path: this.resourcePath })
   .then(function(result) {
     callback(null, result.data);
     return;
