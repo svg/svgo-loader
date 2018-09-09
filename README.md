@@ -21,7 +21,7 @@ DON'T FORGET TO INSTALL / UPDATE THE `svgo` PACKAGE after you update `svg-loader
 Svgo-loader just passes config
 to the [svgo](https://github.com/svg/svgo) library.
 
-### Webpack 2
+### Webpack 2 and higher
 
 ``` javascript
 {
@@ -79,7 +79,8 @@ module.exports = {
 Or you can save svgo config in your main webpack config object,
 and then specify name of the property in the loader query string.
 
-However, this option will not work in Webpack 2.<br>This is only shown here in the documentation for backwards compatibility.
+However, this option will not work in Webpack 2.<br>
+This is only shown here in the documentation for backwards compatibility.
 
 ``` javascript
 // webpack.config.js
