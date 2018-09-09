@@ -21,30 +21,71 @@ DON'T FORGET TO INSTALL / UPDATE THE `svgo` PACKAGE after you update `svg-loader
 Svgo-loader just passes config
 to the [svgo](https://github.com/svg/svgo) library.
 
-### Webpack 2 and higher
+### Put the SVGO config into loared's `options`
 
 ``` javascript
-{
-  test: /\.svg$/,
-  use: [
-    {
-      loader: 'file-loader'
-    },
-    {
-      loader: 'svgo-loader',
-      options: {
-        plugins: [
-          {removeTitle: true},
-          {convertColors: {shorthex: false}},
-          {convertPathData: false}
+module.exports = {
+  ...,
+  module: {
+    rules: [
+      {
+        test: /\.svg$/,
+        use: [
+          {loader: 'file-loader'},
+          {
+            loader: 'svgo-loader',
+            options: {
+              plugins: [
+                {removeTitle: true},
+                {convertColors: {shorthex: false}},
+                {convertPathData: false}
+              ]
+            }
+          }
         ]
       }
-    }
-  ]
+    ]
+  }
 }
 ```
 
-### Webpack 1
+### Or use an external config like you would with SVGO CLI
+
+``` javascript
+module.exports = {
+  ...,
+  module: {
+    rules: [
+      {
+        test: /\.svg$/,
+        use: [
+          {loader: 'file-loader'},
+          {
+            loader: 'svgo-loader',
+            options: {
+              externalConfig: "svgo-config.yml"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+In `svgo-config.yml`:
+
+```yml
+plugins:
+  - removeTitle: true
+  - convertPathData: false
+  - convertColors:
+      shorthex: false
+```
+
+You can use `YML` or `JSON` files as external configs.
+
+### Legacy Webpack v1 config
 
 There is two ways of loading svgo configuration.
 You can pass it as a JSON string after loader name, like this:
