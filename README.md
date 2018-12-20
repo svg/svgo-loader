@@ -18,10 +18,9 @@ DON'T FORGET TO INSTALL / UPDATE THE `svgo` PACKAGE after you update `svg-loader
 
 [Documentation: Using loaders](http://webpack.github.io/docs/using-loaders.html)
 
-Svgo-loader just passes config
-to the [svgo](https://github.com/svg/svgo) library.
+Svgo-loader just passes config to the [svgo](https://github.com/svg/svgo) library.
 
-### Put the SVGO config into loared's `options`
+### Put the SVGO config into loader's `options`
 
 ``` javascript
 module.exports = {
@@ -87,7 +86,7 @@ You can use `YML` or `JSON` files as external configs.
 
 ### Legacy Webpack v1 config
 
-There is two ways of loading svgo configuration.
+There are two ways of loading svgo configuration.
 You can pass it as a JSON string after loader name, like this:
 
 ``` javascript
