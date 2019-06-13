@@ -30,7 +30,7 @@
     "svgo": "^1.0.0"
   },
   "dependencies": {
-    "js-yaml": "^3.12.0",
+    "js-yaml": "^3.13.1",
     "loader-utils": "^1.0.3"
   }
 }
