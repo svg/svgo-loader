@@ -1,5 +1,6 @@
 plugins:
-  - removeTitle: true
-  - convertPathData: false
-  - convertColors:
-      shorthex: false
+  - removeTitle
+  - name: convertPathData
+    active: false
+  - name: convertColors
+    shorthex: false

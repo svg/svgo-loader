@@ -16,9 +16,15 @@ module.exports = {
             loader: '../../index.js',
             options: {
               plugins: [
-                {removeTitle: true},
-                {convertColors: {shorthex: false}},
-                {convertPathData: false}
+                'removeTitle',
+                {
+                  name: 'convertColors',
+                  params: { shorthex: false },
+                },
+                {
+                  name: 'convertPathData',
+                  active: false,
+                }
               ]
             }
           }

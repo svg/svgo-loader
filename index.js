@@ -50,17 +50,19 @@ module.exports = function(source) {
     }
   }
 
-  var svgo = new Svgo({ ...config });
-  svgo.optimize(source, { path: this.resourcePath })
-  .then(function(result) {
-    callback(null, result.data);
+  let result;
+  try {
+    result = Svgo.optimize(source, { ...config, path: this.resourcePath });
+  } catch (error) {
+    callback(error);
     return;
-  }, function(error) {
-    if (error instanceof Error) {
-      callback(error);
-      return;
-    }
-    callback(new Error(error));
+  }
+
+  if (result.error) {
+    callback(new Error(result.error));
     return;
-  });
+  }
+
+  callback(null, result.data);
+  return;
 };

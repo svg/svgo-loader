@@ -35,9 +35,15 @@ module.exports = {
             loader: 'svgo-loader',
             options: {
               plugins: [
-                {removeTitle: true},
-                {convertColors: {shorthex: false}},
-                {convertPathData: false}
+                'removeTitle',
+                {
+                  name: 'convertColors',
+                  params: { shorthex: false },
+                },
+                {
+                  name: 'convertPathData',
+                  active: false,
+                }
               ]
             }
           }
@@ -62,7 +68,7 @@ module.exports = {
           {
             loader: 'svgo-loader',
             options: {
-              externalConfig: "svgo-config.yml"
+              externalConfig: 'svgo-config.yml'
             }
           }
         ]
@@ -76,10 +82,11 @@ In `svgo-config.yml`:
 
 ```yml
 plugins:
-  - removeTitle: true
-  - convertPathData: false
-  - convertColors:
-      shorthex: false
+  - removeTitle
+  - name: convertPathData
+    active: false
+  - name: convertColors
+    shorthex: false
 ```
 
 You can use `YML` or `JSON` files as external configs.
@@ -94,9 +101,15 @@ You can pass it as a JSON string after loader name, like this:
 
 var svgoConfig = JSON.stringify({
   plugins: [
-    {removeTitle: true},
-    {convertColors: {shorthex: false}},
-    {convertPathData: false}
+    'removeTitle',
+    {
+      name: 'convertColors',
+      params: { shorthex: false },
+    },
+    {
+      name: 'convertPathData',
+      active: false,
+    }
   ]
 });
 
@@ -140,9 +153,15 @@ module.exports = {
   },
   svgoConfig1: {
     plugins: [
-      {removeTitle: true},
-      {convertColors: {shorthex: false}},
-      {convertPathData: false}
+      'removeTitle',
+      {
+        name: 'convertColors',
+        params: { shorthex: false },
+      },
+      {
+        name: 'convertPathData',
+        active: false,
+      }
     ]
   }
 }
