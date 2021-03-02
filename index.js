@@ -50,7 +50,7 @@ module.exports = function(source) {
     }
   }
 
-  var svgo = new Svgo(config);
+  var svgo = new Svgo({ ...config });
   svgo.optimize(source, { path: this.resourcePath })
   .then(function(result) {
     callback(null, result.data);
