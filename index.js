@@ -10,22 +10,6 @@ module.exports = function(source) {
 
   var config = loaderUtils.getOptions(this) || {};
 
-  // This piece of code exists in order to support webpack 1.x.x top level configurations.
-  // In webpack 2 this options does not exists anymore.
-  // Please use the `options` field of the loader to pass your configuration
-  if (config.useConfig) {
-    var configName = config.useConfig;
-    var config = this.options[configName];
-    if (config === undefined) {
-      callback(new Error(
-        'You specified "useConfig=' + configName +
-        '" for svgo-loader, but there is no property named "' + configName +
-        '" in your main webpack configuration.'
-      ));
-      return;
-    }
-  }
-
   // Ported from:
   // https://github.com/svg/svgo/blob/174c37208017e5909d5f7db2e8faba49663a945a/lib/svgo/coa.js#L175-L192
   if (typeof config.externalConfig === 'string') {
