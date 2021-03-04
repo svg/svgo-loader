@@ -11,16 +11,11 @@ module.exports = {
       {
         test: /\.svg$/,
         use: [
-          {loader: 'file-loader'},
+          {
+            loader: 'file-loader'
+          },
           {
             loader: '../../index.js',
-            options: {
-              plugins: [
-                {removeTitle: true},
-                {convertColors: {shorthex: false}},
-                {convertPathData: false}
-              ]
-            }
           }
         ]
       }
