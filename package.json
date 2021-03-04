@@ -22,15 +22,11 @@
   "homepage": "https://github.com/pozadi/svgo-loader",
   "devDependencies": {
     "file-loader": "^2.0.0",
-    "svgo": "^1.0.5",
     "webpack": "^4.17.2",
     "webpack-cli": "^3.1.0"
   },
-  "peerDependencies": {
-    "svgo": "^1.0.0"
-  },
   "dependencies": {
-    "js-yaml": "^3.13.1",
-    "loader-utils": "^1.0.3"
+    "loader-utils": "^1.0.3",
+    "svgo": "^2.2.0"
   }
 }

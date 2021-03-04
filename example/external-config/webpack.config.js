@@ -11,12 +11,11 @@ module.exports = {
       {
         test: /\.svg$/,
         use: [
-          {loader: "file-loader"},
+          {
+            loader: "file-loader"
+          },
           {
             loader: "../../index.js",
-            options: {
-              externalConfig: "svgo-config.yml"
-            }
           }
         ]
       }

@@ -3,26 +3,20 @@
 ## Install
 
 ```
-$ npm install svgo svgo-loader --save-dev
+$ npm install svgo-loader --save-dev
 ```
 
 ... or with Yarn
 
 ```
-$ yarn add svgo svgo-loader -D
+$ yarn add svgo-loader -D
 ```
-
-DON'T FORGET TO INSTALL / UPDATE THE `svgo` PACKAGE after you update `svg-loader` (see [#20](https://github.com/rpominov/svgo-loader/issues/20))
 
 ## Usage
 
-[Documentation: Using loaders](http://webpack.github.io/docs/using-loaders.html)
+[Documentation: Using loaders](https://webpack.js.org/concepts/loaders/#using-loaders)
 
-Svgo-loader just passes config to the [svgo](https://github.com/svg/svgo) library.
-
-### Put the SVGO config into loader's `options`
-
-``` javascript
+```js
 module.exports = {
   ...,
   module: {
@@ -30,15 +24,39 @@ module.exports = {
       {
         test: /\.svg$/,
         use: [
-          {loader: 'file-loader'},
+          {
+            loader: 'file-loader'
+          },
+          {
+            loader: 'svgo-loader',
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+By default svgo-loader uses config from `svgo.config.js` similar to svgo cli.
+See [how to configure svgo](https://github.com/svg/svgo#configuration).
+
+Specify configFile option to load custom config module:
+
+```js
+module.exports = {
+  ...,
+  module: {
+    rules: [
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'file-loader'
+          },
           {
             loader: 'svgo-loader',
             options: {
-              plugins: [
-                {removeTitle: true},
-                {convertColors: {shorthex: false}},
-                {convertPathData: false}
-              ]
+              configFile: './scripts/svgo.config.js'
             }
           }
         ]
@@ -48,9 +66,9 @@ module.exports = {
 }
 ```
 
-### Or use an external config like you would with SVGO CLI
+or to disable loading config:
 
-``` javascript
+```js
 module.exports = {
   ...,
   module: {
@@ -58,11 +76,13 @@ module.exports = {
       {
         test: /\.svg$/,
         use: [
-          {loader: 'file-loader'},
+          {
+            loader: 'file-loader'
+          },
           {
             loader: 'svgo-loader',
             options: {
-              externalConfig: "svgo-config.yml"
+              configFile: false
             }
           }
         ]
@@ -72,14 +92,36 @@ module.exports = {
 }
 ```
 
-In `svgo-config.yml`:
+You can also specify options which override loaded from config
 
-```yml
-plugins:
-  - removeTitle: true
-  - convertPathData: false
-  - convertColors:
-      shorthex: false
+```js
+module.exports = {
+  ...,
+  module: {
+    rules: [
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'file-loader'
+          },
+          {
+            loader: 'svgo-loader',
+            options: {
+              multipass: true,
+              js2svg: {
+                indent: 2,
+                pretty: true,
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
 ```
 
-You can use `YML` or `JSON` files as external configs.
+## License and Copyright
+
+This software is released under the terms of the [MIT license](https://github.com/rpominov/svgo-loader/blob/master/LICENSE).
