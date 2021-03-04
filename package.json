@@ -8,18 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pozadi/svgo-loader.git"
+    "url": "https://github.com/svg/svgo-loader.git"
   },
   "keywords": [
     "svgo",
     "webpack"
   ],
-  "author": "Roman Pominov <rpominov@gmail.com> (http://pozadi.github.io/)",
+  "author": "Roman Pominov <rpominov@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pozadi/svgo-loader/issues"
+    "url": "https://github.com/svg/svgo-loader/issues"
   },
-  "homepage": "https://github.com/pozadi/svgo-loader",
+  "homepage": "https://github.com/svg/svgo-loader",
   "devDependencies": {
     "file-loader": "^2.0.0",
     "webpack": "^4.17.2",

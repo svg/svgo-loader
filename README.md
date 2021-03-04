@@ -124,4 +124,4 @@ module.exports = {
 
 ## License and Copyright
 
-This software is released under the terms of the [MIT license](https://github.com/rpominov/svgo-loader/blob/master/LICENSE).
+This software is released under the terms of the [MIT license](https://github.com/svg/svgo-loader/blob/master/LICENSE).
