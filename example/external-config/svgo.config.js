@@ -1,19 +1,17 @@
-const { extendDefaultPlugins } = require('svgo');
 module.exports = {
-  plugins: extendDefaultPlugins([
+  plugins: [
     {
-      name: 'removeTitle',
-      active: false
-    },
-    {
-      name: 'convertPathData',
-      active: false
-    },
-    {
-      name: 'convertColors',
+      name: "preset-default",
       params: {
-        shorthex: false
-      }
-    }
-  ])
+        overrides: {
+          removeTitle: false,
+          convertPathData: false,
+          convertColors: {
+            shorthex: false,
+          },
+        },
+      },
+    },
+    "prefixIds",
+  ],
 };
