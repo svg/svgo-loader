@@ -16,6 +16,9 @@ module.exports = {
           },
           {
             loader: "../../index.js",
+            options: {
+              configFile: './svgo.config.js'
+            }
           }
         ]
       }
