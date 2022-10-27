@@ -1,6 +1,6 @@
 {
   "name": "svgo-loader",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "svgo loader for webpack",
   "main": "index.js",
   "scripts": {
