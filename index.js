@@ -2,7 +2,7 @@ const { optimize, loadConfig } = require('svgo');
 const loaderUtils = require('loader-utils');
 
 async function loader(source) {
-  const { configFile, ...options } = this.getOptions() || {};
+  const { configFile, ...options } = loaderUtils.getOptions(this) || {};
   let config;
   if (typeof configFile === 'string') {
     config = await loadConfig(configFile, this.context);

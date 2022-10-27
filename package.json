@@ -21,12 +21,12 @@
   },
   "homepage": "https://github.com/svg/svgo-loader",
   "devDependencies": {
-    "file-loader": "^6.2.0",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
+    "file-loader": "^2.0.0",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
   },
   "dependencies": {
-    "loader-utils": "^3.2.0",
+    "loader-utils": "^1.4.0",
     "svgo": "^2.8.0"
   }
 }
