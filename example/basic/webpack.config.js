@@ -4,7 +4,8 @@ module.exports = {
   entry: "./entry",
   output: {
     path: __dirname + "/dist",
-    filename: "bundle.js"
+    filename: "bundle.js",
+    assetModuleFilename: '[name][ext]'
   },
   module: {
     rules: [
