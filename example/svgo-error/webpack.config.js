@@ -10,14 +10,8 @@ module.exports = {
     rules: [
       {
         test: /\.svg$/,
-        use: [
-          {
-            loader: 'file-loader'
-          },
-          {
-            loader: '../../index.js',
-          }
-        ]
+        type: 'asset/resource',
+        loader: '../../index.js'
       }
     ]
   }

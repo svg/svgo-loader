@@ -10,17 +10,11 @@ module.exports = {
     rules: [
       {
         test: /\.svg$/,
-        use: [
-          {
-            loader: "file-loader"
-          },
-          {
-            loader: "../../index.js",
-            options: {
-              configFile: './svgo.config.js'
-            }
-          }
-        ]
+        type: "asset/resource",
+        loader: "../../index.js",
+        options: {
+          configFile: './svgo.config.js'
+        }
       }
     ]
   }

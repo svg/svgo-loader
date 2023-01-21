@@ -23,14 +23,8 @@ module.exports = {
     rules: [
       {
         test: /\.svg$/,
-        use: [
-          {
-            loader: 'file-loader'
-          },
-          {
-            loader: 'svgo-loader',
-          }
-        ]
+        type: 'asset',
+        loader: 'svgo-loader'
       }
     ]
   }
@@ -49,17 +43,11 @@ module.exports = {
     rules: [
       {
         test: /\.svg$/,
-        use: [
-          {
-            loader: 'file-loader'
-          },
-          {
-            loader: 'svgo-loader',
-            options: {
-              configFile: './scripts/svgo.config.js'
-            }
-          }
-        ]
+        type: 'asset',
+        loader: 'svgo-loader',
+        options: {
+          configFile: './scripts/svgo.config.js'
+        }
       }
     ]
   }
@@ -75,17 +63,11 @@ module.exports = {
     rules: [
       {
         test: /\.svg$/,
-        use: [
-          {
-            loader: 'file-loader'
-          },
-          {
-            loader: 'svgo-loader',
-            options: {
-              configFile: false
-            }
-          }
-        ]
+        type: 'asset',
+        loader: 'svgo-loader',
+        options: {
+          configFile: false
+        }
       }
     ]
   }
@@ -101,21 +83,15 @@ module.exports = {
     rules: [
       {
         test: /\.svg$/,
-        use: [
-          {
-            loader: 'file-loader'
-          },
-          {
-            loader: 'svgo-loader',
-            options: {
-              multipass: true,
-              js2svg: {
-                indent: 2,
-                pretty: true,
-              }
-            }
+        type: 'asset',
+        loader: 'svgo-loader',
+        options: {
+          multipass: true,
+          js2svg: {
+            indent: 2,
+            pretty: true,
           }
-        ]
+        }
       }
     ]
   }
