@@ -4,7 +4,6 @@ module.exports = {
       name: "preset-default",
       params: {
         overrides: {
-          removeTitle: false,
           convertPathData: false,
           convertColors: {
             shorthex: false,
