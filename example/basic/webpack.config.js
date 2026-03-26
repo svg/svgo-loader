@@ -1,11 +1,11 @@
 module.exports = {
-  mode: "production",
+  mode: 'production',
   context: __dirname,
-  entry: "./entry",
+  entry: './entry',
   output: {
-    path: __dirname + "/dist",
-    filename: "bundle.js",
-    assetModuleFilename: '[name][ext]'
+    path: __dirname + '/dist',
+    filename: 'bundle.js',
+    assetModuleFilename: '[name][ext]',
   },
   module: {
     rules: [
@@ -13,7 +13,7 @@ module.exports = {
         test: /\.svg$/,
         type: 'asset/resource',
         loader: '../../index.js',
-      }
-    ]
-  }
-}
+      },
+    ],
+  },
+};

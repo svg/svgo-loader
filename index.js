@@ -8,13 +8,18 @@ async function loader(source) {
   } else if (configFile !== false) {
     config = await loadConfig(null, this.context);
   }
-  const result = optimize(source, { path: this.resourcePath, ...config, ...options });
+  const result = optimize(source, {
+    path: this.resourcePath,
+    ...config,
+    ...options,
+  });
   return result.data;
 }
 
 module.exports = function (source) {
   const callback = this.async();
-  loader.call(this, source)
-    .then(result => callback(null, result))
-    .catch(error => callback(error));
+  loader
+    .call(this, source)
+    .then((result) => callback(null, result))
+    .catch((error) => callback(error));
 };
