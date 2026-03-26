@@ -1,7 +1,7 @@
 module.exports = {
   plugins: [
     {
-      name: "preset-default",
+      name: 'preset-default',
       params: {
         overrides: {
           convertPathData: false,
@@ -11,6 +11,6 @@ module.exports = {
         },
       },
     },
-    "prefixIds",
+    'prefixIds',
   ],
 };

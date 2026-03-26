@@ -1,12 +1,12 @@
-const fs = require("node:fs/promises");
-const path = require("node:path");
-const { test } = require("node:test");
+const fs = require('node:fs/promises');
+const path = require('node:path');
+const { test } = require('node:test');
 
-const webpack = require("webpack");
+const webpack = require('webpack');
 
-const basic = require("./example/basic/webpack.config.js");
-const externalConfig = require("./example/external-config/webpack.config.js");
-const svgoError = require("./example/svgo-error/webpack.config.js");
+const basic = require('./example/basic/webpack.config.js');
+const externalConfig = require('./example/external-config/webpack.config.js');
+const svgoError = require('./example/svgo-error/webpack.config.js');
 
 function buildWebpack(config) {
   const compiler = webpack(config);
@@ -22,33 +22,33 @@ function buildWebpack(config) {
 }
 
 // Override default serializer to avoid SVG snapshot file being stringified
-const snapshotSerializer = (value) => value;
+const identitySerializer = (value) => value;
 
-test("basic", async (t) => {
+test('basic', async (t) => {
   const result = await buildWebpack(basic);
   t.assert.equal(result.hasErrors(), false);
   const output = await fs.readFile(
-    path.join(__dirname, "example", "basic", "dist", "SVG_logo.svg"),
-    "utf8",
+    path.join(__dirname, 'example', 'basic', 'dist', 'SVG_logo.svg'),
+    'utf8',
   );
-  t.assert.fileSnapshot(output, "snapshots/basic.svg", {
-    serializers: [snapshotSerializer],
+  t.assert.fileSnapshot(output, 'snapshots/basic.svg', {
+    serializers: [identitySerializer],
   });
 });
 
-test("external-config", async (t) => {
+test('external-config', async (t) => {
   const result = await buildWebpack(externalConfig);
   t.assert.equal(result.hasErrors(), false);
   const output = await fs.readFile(
-    path.join(__dirname, "example", "external-config", "dist", "SVG_logo.svg"),
-    "utf8",
+    path.join(__dirname, 'example', 'external-config', 'dist', 'SVG_logo.svg'),
+    'utf8',
   );
-  t.assert.fileSnapshot(output, "snapshots/external-config.svg", {
-    serializers: [snapshotSerializer],
+  t.assert.fileSnapshot(output, 'snapshots/external-config.svg', {
+    serializers: [identitySerializer],
   });
 });
 
-test("svgo-error", async (t) => {
+test('svgo-error', async (t) => {
   const result = await buildWebpack(svgoError);
   t.assert.equal(result.hasErrors(), true);
 });
